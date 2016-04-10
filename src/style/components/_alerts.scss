@@ -1,0 +1,206 @@
+.alert {
+  padding: 15px;
+  margin: 0 auto 20px;
+  width: 100%;
+  text-align: center;
+  display: block;
+  max-height: 50px;
+  @include transition(all 0.25s ease);
+  top: 0;
+  z-index: 1010;
+  position: fixed;
+  left: 0;
+
+  h4 {
+    margin-top: 0;
+    color: inherit;
+  }
+  .alert-link {
+    font-weight: bold;
+  }
+
+  .close {
+    display: none;
+  }
+
+  & > p,
+  & > ul {
+    margin-bottom: 0;
+  }
+  & > p + p {
+    margin-top: 5px;
+  }
+
+  &.alert-success {
+    color: $base-white;
+    background-color: $base-green;
+    border-color:  transparent;
+  }
+  &.alert-success hr {
+    border-top-color: $base-white;
+  }
+  &.alert-success .alert-link {
+    color: $base-green;
+  }
+  &.alert-warning {
+    color: $base-red;
+    background-color: $base-white;
+    border-color: $base-red;
+  }
+  &.alert-warning hr {
+    border-top-color: $base-white;
+  }
+  &.alert-warning .alert-link {
+    color: $base-red;
+  }
+
+  & + .container {
+    margin-top: 2.5em;
+  }
+
+  &--new-message {
+    color: $base-white;
+    background: $base-red;
+    width: 1.5em;
+    line-height: 1.5em;
+    border-radius: 50%;
+    position: absolute;
+    top: -.75em;
+    padding: 0;
+    right: -.75em;
+    left: initial;
+  }
+}
+
+.alert.ng-enter {
+  opacity: 0;
+  transform: translateY(-15px);
+}
+
+.alert.ng-leave {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.alert.ng-enter.ng-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.alert.ng-leave.ng-leave-active {
+  opacity: 0;
+  padding: 0;
+  max-height: 0;
+  transform: translateY(-15px);
+}
+
+.error-holder {
+  @include ghostVerticalAlign;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  z-index: 1010;
+  background-color: $base-red;
+  text-align: center;
+  padding: 20px;
+  font-size: 0.8125em;
+  font-weight: 400;
+  color: $base-placeholder;
+  transition:0.25s ease all;
+
+  & > * {
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  &.error--login {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    right: 20px;
+    width: 260px;
+    padding: 18px 5px 19px;
+    height: 85px;
+
+    .form--signup & {
+      height: 110px;
+    }
+
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 29px 52.5px 0 52.5px;
+      border-color: $base-red transparent transparent transparent;
+      top: 100%;
+      left: 50%;
+      margin-left: -52.5px;
+    }
+  }
+
+  &.error--subscription {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+    right: 20px;
+    width: 758px;
+    padding: 18px 5px 19px;
+    height: 110px;
+
+
+    &:after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 29px 52.5px 0 52.5px;
+      border-color: $base-red transparent transparent transparent;
+      top: 100%;
+      left: 50%;
+      margin-left: -52.5px;
+    }
+  }
+
+  &.ng-enter {
+    transform: translateY(-15px);
+    opacity:0;
+  }
+
+  &.ng-enter.ng-enter-active {
+    opacity:1;
+    transform: translateY(0);
+  }
+
+  &.ng-leave.ng-leave-active {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  .btn--close {
+    position:  absolute;
+    right: 30px;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    background: transparent;
+  }
+
+  p {
+    margin-bottom: 0;
+    line-height: 16px;
+    letter-spacing: 1px;
+    text-align: center;
+    font-size: 1em;
+    padding: 0;
+
+    max-height: 49px;
+    overflow: hidden;
+  }
+}

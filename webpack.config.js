@@ -30,7 +30,7 @@ module.exports = function makeWebpackConfig () {
    * Karma will set this when it's a test build
    */
   config.entry = isTest ? {} : {
-    app: './src/app/app.js'
+    app: './src/scripts/app.js'
   };
 
   /**
@@ -85,7 +85,7 @@ module.exports = function makeWebpackConfig () {
       // Transpile .js files using babel-loader
       // Compiles ES6 and ES7 into ES5 code
       test: /\.js$/,
-      loader: 'babel',
+      loader: 'ng-annotate!babel',
       exclude: /node_modules/
     }, {
       // CSS LOADER
@@ -101,6 +101,9 @@ module.exports = function makeWebpackConfig () {
       // Reference: https://github.com/webpack/style-loader
       // Use style-loader in development.
       loader: isTest ? 'null' : ExtractTextPlugin.extract('style', 'css?sourceMap!postcss')
+    }, {
+      test: /\.scss$/,
+      loader: isTest ? 'null' : ExtractTextPlugin.extract('style', 'css?sourceMap!sass?sourceMap')
     }, {
       // ASSET LOADER
       // Reference: https://github.com/webpack/file-loader
@@ -158,7 +161,7 @@ module.exports = function makeWebpackConfig () {
     // Render index.html
     config.plugins.push(
       new HtmlWebpackPlugin({
-        template: './src/public/index.html',
+        template: './src/index.html',
         inject: 'body'
       }),
 
@@ -187,7 +190,7 @@ module.exports = function makeWebpackConfig () {
       // Copy assets from the public folder
       // Reference: https://github.com/kevlened/copy-webpack-plugin
       new CopyWebpackPlugin([{
-        from: __dirname + '/src/public'
+        from: __dirname + '/src'
       }])
     )
   }
@@ -198,7 +201,7 @@ module.exports = function makeWebpackConfig () {
    * Reference: http://webpack.github.io/docs/webpack-dev-server.html
    */
   config.devServer = {
-    contentBase: './src/public',
+    contentBase: './src',
     stats: 'minimal'
   };
 

@@ -1,7 +1,7 @@
 {
-  "name": "angular-webpack-workflow",
+  "name": "angular-webpack",
   "version": "1.0.0",
-  "description": "A workflow for Angular made with Webpack",
+  "description": "Angular webpack starter",
   "scripts": {
     "build": "rimraf dist && webpack --bail --progress --profile",
     "server": "webpack-dev-server --history-api-fallback --inline --progress",
@@ -9,18 +9,11 @@
     "test-watch": "karma start --auto-watch --no-single-run",
     "start": "npm run server"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/Foxandxss/angular-webpack-workflow.git"
-  },
-  "author": "Jesus Rodriguez",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/Foxandxss/angular-webpack-workflow/issues"
-  },
-  "homepage": "https://github.com/Foxandxss/angular-webpack-workflow",
   "dependencies": {
-    "angular": "^1.5.0"
+    "angular": "^1.5.0",
+    "angular-resource": "^1.5.3",
+    "angular-ui-router": "^0.2.18"
   },
   "devDependencies": {
     "angular-mocks": "^1.5.0",
@@ -42,12 +35,15 @@
     "karma-sourcemap-loader": "^0.3.7",
     "karma-spec-reporter": "0.0.26",
     "karma-webpack": "^1.7.0",
+    "ng-annotate-loader": "^0.1.0",
     "node-libs-browser": "^1.0.0",
+    "node-sass": "^3.4.2",
     "null-loader": "^0.1.1",
     "phantomjs-prebuilt": "^2.1.4",
     "postcss-loader": "^0.8.0",
     "raw-loader": "^0.5.1",
     "rimraf": "^2.5.1",
+    "sass-loader": "^3.2.0",
     "style-loader": "^0.13.0",
     "webpack": "^1.12.13",
     "webpack-dev-server": "^1.14.1"

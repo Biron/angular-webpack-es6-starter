@@ -1,0 +1,138 @@
+.messages-wrapper,
+.interviews-wrapper {
+  margin-bottom: 44px;
+  max-height: 430px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  border: 2px solid $base-light-gray;
+
+  .arrow-container--top & {
+    margin-top: 1em;
+    border: 2px solid $base-light-gray;
+  }
+}
+.interview {
+  padding: 14px 21px;
+  background: $base-white;
+  text-align: left;
+  border-bottom: 2px solid $base-light-gray;
+  &:last-child {
+    border-bottom:none;
+  }
+
+  & .interview-text {
+    &--bordered {
+      border-color: $base-light-gray;
+    }
+  }
+}
+
+.interview-text {
+  font-size: 0.8125em;
+
+  p {
+    letter-spacing: 1.64px;
+    line-height: 1.4;
+  }
+
+  strong {
+    font-weight: bold;
+  }
+
+  &--bordered {
+    padding: 1em 0;
+    border-top: 3px dashed #eee;
+    margin-top: 1em;
+  }
+}
+.interview-buttons {
+  .btn-group {
+    .btn {
+      margin: 0.925em 0;
+      margin-left: 3em;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+}
+.message-form {
+  border-top: 3px dashed rgba(151,151,151,.17);
+  padding-top: 17px;
+}
+.message {
+  background: $base-white;
+  border-bottom: 2px solid $gray5;
+  padding: 14px 21px;
+  text-align: right;
+  font-size: 0.875em;
+
+  input {
+    border:0;
+    outline:0;
+    z-index: -1;
+    width: 1px;
+    height:1px;
+    position: relative;
+  }
+
+
+  &.message--gray {
+    background: $gray5;
+    text-align: left;
+    border-bottom: 2px solid $base-white;
+
+    .message-status {
+      background: $base-white;
+    }
+  }
+
+  &.message--darkgray {
+    background: $base-light-gray;
+    text-align: left;
+    border-bottom: 2px solid $base-white;
+
+    .message-label {
+      color: $base-red;
+    }
+
+    .message-status {
+      background: $base-white;
+    }
+  }
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+.message-label {
+  color: $base-green;
+  margin-bottom: 22px;
+  font-weight: 400;
+  span {
+    text-transform: uppercase;
+  }
+}
+.message-text {
+  margin-bottom: 19px;
+}
+.message-system-text {
+  strong {
+    font-weight: 600;
+  }
+  margin-bottom: 19px;
+
+  p {
+    letter-spacing: 1.64px;
+    line-height: 1.4;
+  }
+}
+.message-status {
+  background: $gray5;
+  display: inline-block;
+  font-weight: 400;
+  padding: 3px 9px;
+  text-transform: uppercase;
+  color: $base-green;
+}

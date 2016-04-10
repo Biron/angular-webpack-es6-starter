@@ -1,0 +1,53 @@
+.footer {
+  .panel {
+    padding: 40px 0;
+
+    &--dblue,
+    &--dark {
+      padding: 23px 0 22px;
+    }
+
+    img {
+      display: block;
+    }
+  }
+
+  .bottom-logo {
+    display: inline-block;
+    max-width: 160px;
+  }
+
+  .store-link {
+    display: inline-block;
+    max-width: 155px;
+    @include transition(all 0.25s ease);
+
+    &:hover {
+      @include opacity(0.7);
+    }
+  }
+  
+  .copyright {
+    text-align: center;
+    margin-top: 22px;
+    font-size: 0.8em;
+    line-height: 1.2;
+  }
+}
+
+.contacts-panel {
+  text-align: center;
+  .contacts_item {
+    font-size: 1.4em;
+    display: inline-block;
+    padding: 0 1em;
+
+    .contacts_item_label {
+      font-weight: 400;
+    }
+
+    .contacts_item_info {
+      font-weight: 100;
+    }
+  }
+}

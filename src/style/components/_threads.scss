@@ -1,0 +1,100 @@
+.thread-container-controls,
+.thread-container {
+  & > .column.large-2 {
+    width: 12.5%;
+  }
+  & > .column.large-10 {
+    width: 87.5%;
+  }
+}
+.row.thread-container-controls{
+  margin-bottom: 1.375em;
+}
+.thread-container {
+  &.row {
+    margin-top: 6px;
+    &:first-child {
+      margin-top: 1em;
+    }
+  }
+  .arrow-container{
+    margin-left: 0;
+    .arrow-container_inner {
+      padding: 10px 10px 10px 20px;
+    }
+  }
+
+  .column, .columns {
+    float: none;
+    display: inline-block;
+    vertical-align: middle;
+    &+.column{
+      &:last-child {
+        float: none;
+      }
+    }
+  }
+
+  .candidate_name {
+    font-size: 1.125em;
+    font-family: 'montserrat';
+    margin-bottom: 0.3em;
+  }
+
+  .thread-active {
+    position: absolute;
+    background: $base-dark-green;
+    width: 20px;
+    height: 20px;
+    left: -10px;
+    top: 50%;
+    margin-top: -10px;
+    border-radius: 50% 50%;
+  }
+}
+.thread-arrow {
+  font-size: 2em;
+  color: $base-light-green;
+  text-decoration: none;
+}
+.thread-content {
+  font-size: 0.8125em;
+
+  &.thread-content--clickable {
+    cursor: pointer;
+  }
+
+  .search-name {
+    color: $base-dark-green;
+    font-size: 1.845em;
+    line-height: 1;
+    text-decoration: none;
+    a {
+      text-decoration: none;
+    }
+  }
+
+  .search-location {
+    font-size: 1.231em;
+    color: $base-green;
+    margin-bottom: 1em;
+  }
+
+  .message-count {
+    margin-bottom: 1em;
+    color: $base-green;
+    font-weight: 600;
+  }
+
+  .message-label {
+    margin-bottom: 0;
+    color: $base-green;
+  }
+
+  p.message-text {
+    letter-spacing: 1.65px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,126 @@
+body {
+  font-family: $font-base;
+  font-size: $font-size-base;
+  line-height: 1.42857143;
+  color: $base-dark-gray;
+  font-weight: 300;
+}
+
+
+input, textarea, keygen, select, button {
+  font-size: $font-size-base;
+  line-height: 1.42857143;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $heading-font;
+  font-weight: normal;
+  color: $base-dark-gray;
+
+  &.highlighted {
+    color: $base-dark-green;
+  }
+
+  &.heading-link {
+    a {
+      text-decoration: none;
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+/*
+  .panel & {
+    color: $base-white;
+  }*/
+}
+
+h1 {
+  font-size: 3.438em;
+}
+
+h2 {
+  font-size: 1.750em;
+}
+
+h3 {
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 1.375em;
+}
+
+h5 {
+  font-size: 1em;
+}
+
+
+a {
+  color: $base-dark-green;
+  &:hover {
+    text-decoration: none;
+    color: $base-green;
+  }
+  .panel & {
+    color: $base-white;
+  }
+}
+
+p {
+  line-height: 1.82;
+
+  &.text-pre{
+    line-height: 1.2;
+  }
+}
+
+.centered {
+  text-align: center;
+}
+
+.ta-right {
+  text-align: right;
+}
+
+
+.pull-right {
+  float: right;
+}
+
+.error-text {
+  margin: 20px 0 0;
+  font-size: 0.8125em;
+  color: $base-red;
+}
+
+.tags-container {
+  .label {
+    margin: 0.375em 0.75em 0.3em 0;
+    float: left;
+    text-transform: initial;
+    color: $base-dark-gray;
+    font-weight: 300;
+    line-height: 16px;
+  }
+}
+
+.tag {
+  float: left;
+  position: relative;
+  cursor: default;
+  padding: 6px 12px 5px 11px;
+  background: $base-green;
+  border-radius: 8px;
+  font-size: 100%;
+  color: $base-white;
+  letter-spacing: 1.66px;
+  line-height: 16px;
+  margin-right: 5px;
+  margin-bottom: 5px;
+}

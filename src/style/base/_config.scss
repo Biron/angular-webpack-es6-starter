@@ -1,0 +1,158 @@
+/* ----------- reset ------------ */
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+html{
+  background:#FFF;
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  min-height: 100%;
+  position: relative;
+  -webkit-font-smoothing: subpixel-antialiased;
+}
+
+/*
+	TODO remove settings on BODY since we can't namespace it.
+*/
+/*
+	TODO test putting a class on HEAD.
+		- Fails on FF.
+*/
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+form,
+fieldset,
+legend,
+input,
+textarea,
+p,
+blockquote,
+th,
+td {
+  margin:0;
+  padding:0;
+}
+table {
+  border-collapse:collapse;
+  border-spacing:0;
+}
+fieldset,
+img {
+  border:0;
+}
+
+img {
+  max-width: 100%;
+}
+/*
+	TODO think about hanlding inheritence differently, maybe letting IE6 fail a bit...
+*/
+address,
+caption,
+cite,
+code,
+dfn,
+em,
+strong,
+th,
+var {
+  font-style:normal;
+  font-weight:normal;
+}
+
+ol,
+ul {
+  list-style:none;
+}
+
+caption,
+th {
+  text-align:left;
+}
+
+q:before,
+q:after {
+  content:'';
+}
+abbr,
+acronym {
+  border:0;
+  font-variant:normal;
+}
+/* to preserve line-height and selector appearance */
+sup {
+  vertical-align:text-top;
+}
+sub {
+  vertical-align:text-bottom;
+}
+input,
+textarea,
+select {
+  font-family:inherit;
+  font-size:inherit;
+  font-weight:inherit;
+  *font-size:100%; /*to enable resizing for IE*/
+}
+/*because legend doesn't inherit in IE */
+legend {
+  color:#000;
+}
+
+input,
+button {
+  border: none;
+  text-shadow: none;
+}
+input::-ms-clear {
+  display: none;
+}
+
+button,
+input[type=submit] {
+  &:enabled {
+    cursor: pointer;
+  }
+  &:focus {
+    outline: none;
+  }
+}
+/* Angular form validation configuration style */
+.ng-invalid.ng-dirty,
+.input-error {
+  .form-control &,
+  &{
+    border-color: $color-error;
+    transition: border-color 0.25s ease;
+  }
+}
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+  display: none !important;
+}

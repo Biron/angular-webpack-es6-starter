@@ -1,0 +1,50 @@
+/* ========= Layout configuration =======*/
+body {
+  min-width: 960px;
+}
+
+.row {}
+.column {}
+.large {}
+
+/* ----------- Main Config ------------ */
+
+.page_heading {
+  padding: 2.4em 0 1.4em;
+  
+  h2 {
+    margin-bottom: 0.4em;
+  }
+
+  .btn-group {
+    .btn {
+      margin-top: 0.6em;
+    }
+  }
+}
+
+.breadcrumbs {
+  overflow: hidden;
+  max-width: 100%;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+
+  a {
+    text-decoration: none;
+    color: $base-dark-gray;
+    
+    &:hover {
+      text-decoration: underline;
+    }
+  }  
+}
+
+.page_content {
+  @include clearfix;
+  border-top: 3px dashed #eee;
+  padding: 3.375em 0;
+
+  &:first-child {
+    padding: 0;
+  }
+}

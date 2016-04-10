@@ -1,0 +1,260 @@
+.candidates-wrapper {
+  margin-top: 2em;
+
+  &.candidates-wrapper--shortlisted {
+    margin-top: 0;
+
+    .candidate {
+      padding: 1.2em 0 1.85em;
+      background: none;
+      border-bottom: 2px dashed rgba(92, 92, 92, 0.17);
+      &:first-child {
+        border-top: 2px dashed rgba(92, 92, 92, 0.17);
+      }
+
+      & > .row {
+        padding: 0;
+
+        &:first-child {
+          margin-bottom: 1em;
+        }
+      }
+    }
+
+    .candidate_name {
+      margin-top: 0.75em;
+      margin-bottom: 0.3em;
+    }
+
+    .candidate_last-activity {
+      p {
+        display: inline-block;
+      }
+    }
+
+
+  }
+
+  .candidate {
+    //padding: 1em 1em 1em 0.3em;
+    background: $gray5;
+    margin-bottom: 3px;
+
+    .large-2--bigger {
+      width: 20%
+    }
+    .large-4--smaller {
+      width: 30%;
+    }
+
+    & > .row {
+      padding: 1em 1em 0.75em 0.3em;
+    }
+  }
+}
+.candidate {
+  @include clearfix;
+  padding: 0.45em 0.3em;
+}
+.candidate_image {
+  position: relative;
+  text-align: center;
+  display: inline-block;
+
+  &.cleared {
+    float: left;
+  }
+
+  & > img {
+    width: 77px;
+    display: block;
+    position: relative;
+    z-index: 10;
+  }
+
+  & > img {
+    border-radius: 50% 50%;
+  }
+
+  .flag {
+    position: absolute;
+    z-index: 20;
+    top: 48px;
+    right: -10px;
+
+    img {
+      width: 100%;
+      height: 100%;
+      max-height: 26px;
+      max-width: 34px;
+      display: block;
+      border: 1px solid $base-light-gray;
+    }
+  }
+
+  &.candidate_image--messages {
+    margin-top: 50px;
+  }
+}
+.candidate_name {
+  letter-spacing: 0.79px;
+  margin-bottom: 1.2em;
+  font-size: 0.875em;
+  line-height: 1.167em;
+  color: $base-dark-green;
+  a {
+    color: $base-dark-green;
+
+    //Add ... at the end of name
+    display:inline-block;
+    max-width: 100%;
+    text-overflow: ellipsis;
+  }
+
+
+  &.candidate_name--inmessages {
+    margin-bottom: 0.1em;
+    font-size: 1.125em;
+  }
+}
+.candidate_last-activity {
+  font-weight: normal;
+  font-style: italic;
+  font-size: 0.625em;
+}
+.candidate_nationality {
+  font-size: 0.875em;
+  letter-spacing: 1.79px;
+  font-weight: 100;
+  color: $base-dark-gray;
+  margin-bottom: 1.25em;
+}
+.candidate_match {
+  letter-spacing: 1.11px;
+  font-weight: 100;
+  font-size: 0.875em;
+  line-height:1.7142em;
+  vertical-align: middle;
+}
+.candidate_rating {
+  font-size: 1.7142em;
+  line-height:1.7142em;
+  font-weight: bold;
+  display: inline-block;
+  margin-right: 0.5em;
+  vertical-align: middle;
+}
+.candidate_status {
+  font-size: 0.875em;
+  font-weight: 100;
+  letter-spacing: 1.11px;
+  margin-top: 2.3em;
+  line-height: 1em;
+  &:first-child {
+    margin-top: 0.25em;
+  }
+
+  label,
+  .label{
+    font-weight: bold;
+    color: $base-dark-gray;
+    font-size: 1em;
+    margin-bottom: 0;
+  }
+}
+.candidate_block {
+  background: $base-white;
+  padding: 0.3em 1em;
+  white-space: nowrap;
+  height: 68px;
+  overflow: hidden;
+
+  position: relative;
+  @include ghostVerticalAlign;
+
+  & > * {
+    vertical-align: middle;
+  }
+
+  .candidate_blocks-holder & {
+    padding: .3em 0.5em;
+    height: 55px;
+
+    .candidate_block_icon {
+      text-align: left;
+    }
+  }
+
+  .candidate_block_icon {
+    width: 1.75em;
+    display: inline-block;
+    font-size: 2.35em;
+    line-height: 1;
+    color: $base-green;
+    &.candidate_block_icon--small {
+      width: 1.5em;
+    }
+  }
+
+  .candidate_block-content {
+    vertical-align: middle;
+    display: inline-block;
+  }
+
+  .candidate_status {
+    width: 190px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+    display: inline-block;
+    margin-top: 0;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .candidate_rating {
+    margin-right: 0.1em;
+  }
+}
+.candidate-sidebar {
+  background: $base-white;
+  padding: 1.3em 1em;
+
+  .candidate_name {
+    margin-bottom: 0.1em;
+  }
+}
+.candidate_blocks-holder {
+  margin: 1em -1em;
+}
+.candidate-info {
+  padding: 1.4em 1em;
+
+  .candidate-info_controls {
+    padding-bottom: 1.5em;
+    border-bottom: 3px dashed rgba(151,151,151,.17);
+  }
+
+  .candidate-info_description {
+    padding-top: 1.5em;
+    font-size: 0.875em;
+  }
+}
+.candidate-qualification {
+  background: $base-white;
+  padding: 0.95em 1.5em;
+  margin-top: 1.5em;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  p {
+    font-size: 0.875em;
+    letter-spacing: 1.66px;
+    line-height: 16px;
+  }
+}

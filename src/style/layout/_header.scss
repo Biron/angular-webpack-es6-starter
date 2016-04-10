@@ -1,0 +1,56 @@
+.page-header {
+  background: $base-green;
+  padding-bottom: 0.875em;
+}
+
+.header {
+  .logo {
+    margin: 3em 0 0;
+    max-width: 230px;
+
+    img {
+      height: 79px;
+    }
+  }
+}
+
+.user-info {
+  float: right;
+  text-align: right;
+  margin: 3em 0 3.35em;
+  line-height: 1.75;
+}
+
+.user_image {
+  float: right;
+
+  .user-picture_image {
+    width: 77px;
+    height: 77px;
+    background-size: cover;
+    background-position: center center;
+    border-radius: 50% 50%;
+  }
+
+  img {
+    display: block;
+    border-radius: 50% 50%;
+  }
+}
+
+.user_name {
+  float: right;
+  margin: 0.7em 1.60em;
+  color: $base-white;
+  letter-spacing: 0.08em;
+
+  a {
+    color: $base-white;
+    font-weight: 100;
+    @include transition(all 0.3s ease);
+
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

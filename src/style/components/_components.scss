@@ -1,0 +1,186 @@
+/* ----------- components ------------ */
+
+.panel,
+.mask {
+  padding: 30px 0;
+  background: $base-dark-green;
+  color: $base-white;
+
+  & > * {
+    vertical-align: top;
+  }
+
+  &.panel--no-back {
+    background: none;
+  }
+  
+  &.panel--dark {
+    background: $base-dark-gray;
+  }
+}
+
+.row--verticalized {
+  @include ghostVerticalAlign();
+  & > *,
+  .column,
+  .column+.column:last-child {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+  }
+
+  .btn {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+
+.container {
+  background: $base-lightest-gray;
+  box-shadow: 0 3px 0 0 $base-light-gray;
+  border-radius: 2px;
+  margin: 0 0 3.375em 0;
+  padding: 1em 1.1em 2em;
+  position: relative;
+  @include clearfix;
+
+  &:first-child {
+    margin-top: 2.5em;
+  }
+
+  &--multiple {
+    margin-bottom: 1.25em;
+  }
+}
+
+
+.label {
+  text-transform: uppercase;
+  color: $base-green;
+  margin-bottom: 1.25em;
+  font-size: 0.875em;
+  font-weight: 400;
+
+  a {
+    color: $base-green;
+    text-decoration: none;
+  }
+}
+
+/*=======================================
+ Animations
+=======================================*/
+.ng-enter {
+  &.table-row,
+  &.card-holder,
+  &.membership-holder {
+    animation: enter_sequence 0.3s linear;
+  }
+}
+
+.ng-leave {
+  &.table-row,
+  &.card-holder,
+  &.membership-holder {
+    animation: leave_sequence 0.1s linear;
+  }
+}
+
+@keyframes enter_sequence {
+  from {
+    opacity:0;
+    line-height: 0;
+  }
+  to {
+    opacity:1;
+    line-height: 1.4;
+  }
+}
+@keyframes leave_sequence {
+  from {
+    opacity:1;
+    line-height: 1.4;
+  }
+  to {
+    opacity:0;
+    line-height: 0;
+  }
+}
+@keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+    transform:rotate(0deg);
+  }
+  50% {
+    -webkit-transform: rotate(180deg);
+    transform:rotate(180deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform:rotate(360deg);
+  }
+}
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes fadeOutRight {
+  0% {
+   //opacity: 1;
+    max-height: 150px;
+    //transform: translateX(0);
+}
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    padding: 0;
+    opacity: 0;
+    max-height: 0;
+    //transform: translateX(150px);
+  }
+}
+
+.fade-in-up {
+  -webkit-animation: fadeInUp .5s;
+  animation: fadeInUp .5s;
+}
+.fade-out-right {
+  -webkit-animation: fadeInRight 5.5s;
+  animation: fadeInRight 5.5s;
+}
+.fade-in-up.ng-leave {
+  display: none !important;
+}
+
+.collapse {
+  display: none;
+  &.in {
+    display: block;
+  }
+}
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  @include transition(height .35s ease);
+}
+.candidate.collapse.ng-leave {
+  overflow: hidden;
+  max-height: 250px;
+  box-sizing: content-box;
+  opacity: 1;
+  @include transition(all .35s linear);
+
+}
+.candidate.collapse.ng-leave.ng-leave-active {
+  max-height: 0;
+  opacity: 0;
+}
