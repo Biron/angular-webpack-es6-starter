@@ -8,6 +8,7 @@ import MainModule from './modules/main/main';
 import TokenInterceptor from './common/interceptors/common.interceptor';
 import Config from './configs/constants.config';
 import EventsConfig from './configs/events.config';
+import API from './configs/api.config';
 
 import '../style/app.css';
 import '../style/index.scss';
@@ -18,6 +19,7 @@ angular.module(MODULE_NAME, [uiRouter, ngResource, CommonModule, MainModule])
     .constant('Config', Config)
     .run(EventsConfig)
     .factory('TokenInterceptor', TokenInterceptor)
+    .factory('api', () => API)
     /* @ngInject */
     .config(($httpProvider, $locationProvider, $urlRouterProvider) => {
         $locationProvider.html5Mode(true);

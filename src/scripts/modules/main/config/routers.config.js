@@ -11,8 +11,7 @@ export default function RouteConfig($stateProvider, $urlRouterProvider) {
             url: '',
             views: {
                 '': {
-                    template: require('../templates/main.tmpl.html'),
-                    controller: 'MainCtrl'
+                    template: require('../templates/main.tmpl.html')
                 },
                 'header@app': {
                     template: require('../templates/header.tmpl.html'),
