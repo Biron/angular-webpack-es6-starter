@@ -1,22 +1,22 @@
+/* @ngInject */
 export class LocalStorageService {
-    /* @ngInject */
     constructor() {
         this.LS = window.localStorage;
     }
-    
-    getItem ( headerName ) {
+
+    getItem(headerName) {
         return this.LS.getItem(headerName);
     }
-    
-    clear ( headerName ) {
+
+    clear(headerName) {
         return this.LS.setItem(headerName, '');
     }
 
-    setItem ( headerName, value ) {
+    setItem(headerName, value) {
         return this.LS.setItem(headerName, value);
     }
-    
-    has ( headerName ) {
+
+    has(headerName) {
         return this.LS.getItem(headerName);
     }
 }

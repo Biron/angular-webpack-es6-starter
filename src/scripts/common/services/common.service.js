@@ -1,12 +1,12 @@
+/* @ngInject */
 export default class CommonService {
-    /* @ngInject */
     constructor(commonRepository) {
         this.commonRepository = commonRepository;
-        console.log("service lodade")
+        console.log('service lodaded');
     }
-    
+
     getMyList() {
-        console.log("getMyList")
+        console.log('getMyList');
         return this.commonRepository.getMyList().$promise;
     }
 }
